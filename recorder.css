@@ -1,0 +1,316 @@
+.header-recorder {
+  max-width: 370px;
+  margin: auto;
+  margin-top: 20px;
+  color: #243196;
+  display: none;
+}
+
+h1 {
+	margin-bottom: 10px;
+	font-size: 220%;
+	font-weight: bold;
+	line-height: 1.1;
+	margin-bottom: 1rem;
+	letter-spacing: -1px;
+}
+
+p {
+  margin-top: 10px;
+}
+
+.modal-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  display: none;
+  transition: all .3s;
+}
+
+.modal {
+  transition: all .3s;
+	position: fixed;
+	z-index: 10;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background: white;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 400px;
+	max-width: 100%;
+	box-shadow: 0 0 10000px black;
+	border-radius: 10px;
+	display: none;
+	max-height: 80vh;
+	overflow: scroll;
+}
+
+#close-modal {
+	background: none;
+	font-size: 20px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #243196;
+}
+
+.disabled {
+	background: grey;
+	cursor: not-allowed;
+	pointer-events: none;
+  margin-top: 13px;
+  min-height: 30px;
+}
+
+.recorder {
+	width: 320px;
+	max-width: 100%;
+	padding: 20px;
+	/* margin: auto; */
+	/* margin-bottom: 20px; */
+	background: #2a2b30;
+	border-radius: 20px;
+	color: white;
+	box-shadow: 5px 5px 0px rgb(0 0 0);
+	border: 4px solid black;
+	display: flex;
+	flex-direction: column;
+}
+
+.screen {
+  font-size: 20px;
+  font-family: monospace;
+  padding: 20px;
+  background: #bcc8e1;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  gap: 10px;
+  color: #525896 !important;
+  border-bottom: 2px solid white;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-left: 2px solid rgba(0, 0, 0, 0.5);
+  border-right: 2px solid white;
+  box-shadow: 0 0 4px black;
+}
+
+span#recording-tmp {
+  font-size: 78%;
+  padding: 5px;
+  background: #525896;
+  color: #bcc8e1;
+  border-radius: 3px;
+  text-transform: lowercase;
+}
+
+.recording-name {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-direction: column;
+}
+div#length {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+div#recording-length {
+  font-size: 120%;
+}
+
+svg {
+  fill: #525896;
+}
+
+#khz {
+  font-size: 60%;
+  padding: 0px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #525896;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+div#recording-battery {
+  width: 25px;
+  display: inline-flex;
+  /* height: 100%; */
+}
+
+#recording-icon {
+  display: inline-block;
+  border-radius: 2px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  /* STOP */
+  border-color: #525896;
+  border-width: 10px;
+  /* PLAY */
+  /* border-color: transparent transparent transparent #525896;
+    border-width: 10px 0px 10px 20px; */
+  /* REC */
+  /* border-color: #ed341d;
+    border-width: 10px;
+    border-radius: 100%; */
+}
+
+.volume {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.volume-peaks {
+  width: 100%;
+  height: 20px;
+}
+
+.volume-progress {
+  height: 100%;
+  width: 1%;
+  background: #525896;
+}
+
+.limiter {
+  font-size: 60%;
+  border-top: 2px dashed;
+  margin-top: 10px;
+}
+.limiter span:nth-child(1) {
+  width: 50%;
+  display: inline-block;
+}
+.limiter span:nth-child(2) {
+  width: 20%;
+  display: inline-block;
+}
+.limiter span:nth-child(3) {
+  width: 10%;
+  display: inline-block;
+}
+.limiter span:nth-child(4) {
+  width: 5%;
+  display: inline-block;
+}
+.limiter span:nth-child(5) {
+  float: right;
+}
+
+#controls {
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.controls-next {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.controls-next .record-wrap {
+  min-width: 60px;
+  height: 60px;
+  font-size: 150%;
+}
+
+small {
+  text-align: center;
+  color: #666666;
+  display: block;
+}
+
+#recorder-name {
+  margin: auto;
+  font-size: 120%;
+  font-style: oblique;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  text-align: center;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px black;
+  padding: 5px 25px 5px 25px;
+  border: 1px solid #666666;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 5px black;
+}
+
+/* button#recordNext:disable,
+button#recordPrev:disable {
+  background: transparent;
+  color: #666666;
+  font-size: 120%;
+} */
+
+button#recordNext,
+button#recordPrev {
+  background: transparent;
+  font-size: 120%;
+}
+
+.record-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 100%;
+  gap: 10px;
+  min-width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+button {
+  cursor: pointer;
+}
+
+button#recordButton {
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  border-width: 0;
+  background-color: red;
+}
+
+button#stopButton {
+  height: 35px;
+  width: 35px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: #666666;
+}
+
+button#playButton {
+  height: 35px;
+  width: 35px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: transparent transparent transparent #666666;
+  border-width: 17px 0px 17px 35px;
+  background-color: transparent;
+  transform: translateX(9px);
+}

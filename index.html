@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Boîte vocale du studio son</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="recorder.css" />
+  </head>
+  <body>
+    <div class="flex-wrapper-global">
+      <div class="header-recorder">
+        <!-- <h1>L'enregistreur du studio son</h1> -->
+        <!-- <p>
+          À l'occasion des 30 ans du studio son de l'École des Beaux-Arts de
+          Bordeaux nous vous proposons d'enregistrer un message, une anecdote,
+          une histoire de son. Cet enregistrement sera diffusé lors de la soirée
+          anniversaire du 15 Décembre 2022 au Café Pompier.
+        </p> -->
+        <div class="thanks">
+          <h2>Merci pour votre message ❤️</h2>
+        </div>
+      </div>
+      <div class="recorder">
+        <div class="screen">
+          <div id="length">
+            <span id="recording-icon"></span>
+            <div id="recording-length">
+              <span id="minutes">00</span>:<span id="seconds">00</span>
+            </div>
+            <div id="recording-battery">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                style="enable-background: new 0 0 512 512"
+                xml:space="preserve"
+              >
+                <path
+                  d="M440.889 163.556V78.222H0v355.556h440.889v-85.333H512V163.556h-71.111zm-42.667 227.555H42.667V120.889h355.556v270.222zm71.111-85.333h-28.444v-99.556h28.444v99.556z"
+                />
+                <path
+                  d="M92.444 170.667h56.889v163.556H92.444zM192 170.667h56.889v163.556H192z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="recording-name">
+            <span id="recording-tmp">TMP-NAME.WAV</span>
+          </div>
+          <div class="volume-wrap">
+            <div class="volume">
+              <span>L </span>
+              <div class="volume-peaks">
+                <div class="volume-progress" id="l"></div>
+              </div>
+            </div>
+            <div class="volume">
+              <span>R </span>
+              <div class="volume-peaks">
+                <div class="volume-progress" id="r"></div>
+              </div>
+            </div>
+            <div class="limiter">
+              <span>-48</span>
+              <span>-24</span>
+              <span>-12</span>
+              <span>-6</span>
+              <span>0</span>
+            </div>
+          </div>
+          <span id="khz"> 48khz/16bits</span>
+        </div>
+        <p id="recorder-name">Z👀M</p>
+        <div id="controls">
+          <div class="record-wrap">
+            <button id="recordButton"></button>
+          </div>
+          <div class="record-wrap">
+            <button id="stopButton" disabled></button>
+          </div>
+          <!-- <div class="record-wrap">
+            <button id="playButton" disabled></button>
+          </div> -->
+        </div>
+        <!-- <div class="controls-next">
+          <div class="record-wrap">
+            <button id="recordPrev" disabled>⇦</button>
+          </div>
+          <div class="record-wrap">
+            <button id="recordNext" disabled>⇨</button>
+          </div>
+        </div> -->
+        <small>EBABX — 2022</small>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="flex-wrapper" style="max-width: 800px">
+        <button id="close-modal">×</button>
+        <p><strong>
+          Envoyez au studio son un ou plusieurs enregistrements grâce aux boutons bleus "Envoyer l'enregistrement".
+        </strong></p>
+        <div class="list">
+          <strong id="recorded"></strong>
+          <ol id="recordingsList"></ol>
+        </div>
+      </div>
+    </div>
+    <div class="modal-bg"></div>
+    <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/recorder.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
