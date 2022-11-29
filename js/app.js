@@ -157,7 +157,7 @@ function startRecording() {
 function stopRecording() {
   cancelAnimationFrame(volumeFrame);
 
-  var filename = new Date().toISOString();
+  filename = new Date().toISOString();
 
   document.getElementById("recording-tmp").innerText = filename + ".wav";
 
