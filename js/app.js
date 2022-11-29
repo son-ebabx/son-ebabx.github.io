@@ -234,7 +234,7 @@ function createDownloadLink(blob) {
     };
     var fd = new FormData();
     fd.append("audio_data", blob, filename);
-    xhr.open("POST", "upload.php", true);
+    xhr.open("POST", "https://recorder.antoine.world/upload.php", true);
     xhr.send(fd);
     setTimeout(function () {
       upload.innerHTML = "Merci pour cet enregistrement !";
